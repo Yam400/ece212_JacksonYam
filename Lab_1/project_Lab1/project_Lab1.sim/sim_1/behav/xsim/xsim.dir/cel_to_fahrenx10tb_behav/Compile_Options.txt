@@ -1,0 +1,1 @@
+-wto "6b1216559a30433fa72aa665ecfc936a" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "cel_to_fahrenx10tb_behav" "xil_defaultlib.cel_to_fahrenx10tb" "xil_defaultlib.glbl" -log "elaborate.log" 

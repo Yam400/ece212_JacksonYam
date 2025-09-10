@@ -1,0 +1,9 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.srcs/sim_1/new/cel_to_fahrenx10tb.sv,1757443530,systemVerilog,,,,cel_to_fahrenx10tb,,uvm,,,,,,
+C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.srcs/sim_1/new/roundtb.sv,1757444795,systemVerilog,,,,roundtb,,uvm,,,,,,
+C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.srcs/sources_1/new/celsius_to_fahren_x10.sv,1757443698,systemVerilog,,C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.srcs/sim_1/new/cel_to_fahrenx10tb.sv,,celsius_to_fahren_x10,,uvm,,,,,,
+C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.srcs/sources_1/new/round.sv,1757444992,systemVerilog,,C:/Users/yanjx/Downloads/project_Lab1/project_Lab1.srcs/sim_1/new/roundtb.sv,,round,,uvm,,,,,,
