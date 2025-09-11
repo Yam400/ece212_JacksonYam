@@ -50,7 +50,7 @@ module lab01_top(
     assign cel2 = (SW[15]) ? (temp_manual) : (temp_sensor);
     celsius_to_fahren_x10 thiscodeisreallycool(.celsius(cel),.fahren(fah));
     round shitting(.in(fah),.out(rounded));
-    assign temp_final = (SW[14]) ? (rounded) : (cel2);
+    assign temp_final = (SW[14]) ? (cel2) : (rounded);
            
     
     
