@@ -1,0 +1,4 @@
+Running: xsim.dir/fsmtb_behav/xsimk.exe -simmode gui -wdb fsmtb_behav.wdb -simrunnum 0 -socket 64771
+Design successfully loaded
+Design Loading Memory Usage: 8568 KB (Peak: 8568 KB)
+Design Loading CPU Usage: 15 ms

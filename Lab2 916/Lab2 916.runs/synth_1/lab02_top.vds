@@ -1,0 +1,356 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Sep 16 15:41:05 2025
+# Process ID: 13656
+# Current directory: C:/Users/yanjx/Lab2 916/Lab2 916.runs/synth_1
+# Command line: vivado.exe -log lab02_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab02_top.tcl
+# Log file: C:/Users/yanjx/Lab2 916/Lab2 916.runs/synth_1/lab02_top.vds
+# Journal file: C:/Users/yanjx/Lab2 916/Lab2 916.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source lab02_top.tcl -notrace
+Command: synth_design -top lab02_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13640
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1140.750 ; gain = 27.977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lab02_top' [C:/Users/yanjx/Downloads/lab02_top.sv:16]
+INFO: [Synth 8-638] synthesizing module 'TempSensorCtl' [C:/Users/yanjx/Downloads/TempSensorCtl.vhd:58]
+	Parameter CLOCKFREQ bound to: 100 - type: integer 
+	Parameter CLOCKFREQ bound to: 100 - type: integer 
+	Parameter ATTEMPT_SLAVE_UNBLOCK bound to: 1 - type: bool 
+INFO: [Synth 8-3491] module 'TWICtl' declared at 'C:/Users/yanjx/Downloads/TWICtl.vhd:68' bound to instance 'Inst_TWICtl' of component 'TWICtl' [C:/Users/yanjx/Downloads/TempSensorCtl.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'TWICtl' [C:/Users/yanjx/Downloads/TWICtl.vhd:132]
+	Parameter CLOCKFREQ bound to: 100 - type: integer 
+	Parameter ATTEMPT_SLAVE_UNBLOCK bound to: 1 - type: bool 
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TWICtl.vhd:357]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TWICtl.vhd:375]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TWICtl.vhd:393]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TWICtl.vhd:411]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TWICtl.vhd:429]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TWICtl.vhd:447]
+WARNING: [Synth 8-614] signal 'timeOutCnt' is read in the process but is not in the sensitivity list [C:/Users/yanjx/Downloads/TWICtl.vhd:500]
+INFO: [Synth 8-256] done synthesizing module 'TWICtl' (1#1) [C:/Users/yanjx/Downloads/TWICtl.vhd:132]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/TempSensorCtl.vhd:328]
+WARNING: [Synth 8-614] signal 'initA' is read in the process but is not in the sensitivity list [C:/Users/yanjx/Downloads/TempSensorCtl.vhd:323]
+INFO: [Synth 8-256] done synthesizing module 'TempSensorCtl' (2#1) [C:/Users/yanjx/Downloads/TempSensorCtl.vhd:58]
+INFO: [Synth 8-6157] synthesizing module 'clock_enable' [C:/Users/yanjx/Downloads/clock_enable.sv:20]
+	Parameter PERIOD_MS bound to: 2000 - type: integer 
+	Parameter PERIOD_US bound to: 2000000 - type: integer 
+	Parameter PERIOD_NS bound to: 2000000000 - type: integer 
+	Parameter CLKFREQ_MHZ bound to: 100 - type: integer 
+	Parameter CLKPD_NS bound to: 10 - type: integer 
+	Parameter PERIOD_COUNT_LIMIT bound to: 200000000 - type: integer 
+	Parameter PERIOD_COUNT_BITS bound to: 28 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'clock_enable' (3#1) [C:/Users/yanjx/Downloads/clock_enable.sv:20]
+INFO: [Synth 8-6157] synthesizing module 'fsm' [C:/Users/yanjx/Lab2 916/Lab2 916.srcs/sources_1/new/fsm.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'fsm' (4#1) [C:/Users/yanjx/Lab2 916/Lab2 916.srcs/sources_1/new/fsm.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'dig_clock' [C:/Users/yanjx/Downloads/dig_clock.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_enable__parameterized0' [C:/Users/yanjx/Downloads/clock_enable.sv:20]
+	Parameter PERIOD_MS bound to: 1000 - type: integer 
+	Parameter PERIOD_US bound to: 1000000 - type: integer 
+	Parameter PERIOD_NS bound to: 1000000000 - type: integer 
+	Parameter CLKFREQ_MHZ bound to: 100 - type: integer 
+	Parameter CLKPD_NS bound to: 10 - type: integer 
+	Parameter PERIOD_COUNT_LIMIT bound to: 100000000 - type: integer 
+	Parameter PERIOD_COUNT_BITS bound to: 27 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'clock_enable__parameterized0' (4#1) [C:/Users/yanjx/Downloads/clock_enable.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'dig_clock' (5#1) [C:/Users/yanjx/Downloads/dig_clock.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_display' [C:/Users/yanjx/Downloads/clock_display.sv:23]
+	Parameter DASH bound to: 7'b0111111 
+INFO: [Synth 8-6157] synthesizing module 'dbl_dabble_ext' [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:15]
+INFO: [Synth 8-251] dbl_dabble input: x [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:22]
+INFO: [Synth 8-251] add3o 4 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 5 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 6 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 7 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 7 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 8 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 8 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 9 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 9 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 10 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 10 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 10 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:37]
+INFO: [Synth 8-251] add3o 11 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 11 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 11 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:37]
+INFO: [Synth 8-251] add3o 12 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 12 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 12 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:37]
+INFO: [Synth 8-251] add3o 13 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:29]
+INFO: [Synth 8-251] add3o 13 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:33]
+INFO: [Synth 8-251] add3o 13 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:37]
+INFO: [Synth 8-251] add3o 13 4'bxxxx 4'bxxxx 4'bxxxx 4'bxxxx 13'bxxxxxxxxxxxxx [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:41]
+INFO: [Synth 8-251] result    x    x   x   x [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:45]
+INFO: [Synth 8-6155] done synthesizing module 'dbl_dabble_ext' (6#1) [C:/Users/yanjx/Downloads/dbl_dabble_ext.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'adv_seven_seg_n' [C:/Users/yanjx/Downloads/adv_seven_seg_n.sv:19]
+INFO: [Synth 8-226] default block is never used [C:/Users/yanjx/Downloads/adv_seven_seg_n.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'adv_seven_seg_n' (7#1) [C:/Users/yanjx/Downloads/adv_seven_seg_n.sv:19]
+INFO: [Synth 8-6157] synthesizing module 'disp_mux_seven_seg' [C:/Users/yanjx/Downloads/disp_mux_seven_seg.sv:23]
+	Parameter N bound to: 19 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'disp_mux_seven_seg' (8#1) [C:/Users/yanjx/Downloads/disp_mux_seven_seg.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'clock_display' (9#1) [C:/Users/yanjx/Downloads/clock_display.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'celsius_to_fahren_x10' [C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/Lab_1/project_Lab1/project_Lab1.srcs/sources_1/new/celsius_to_fahren_x10.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'celsius_to_fahren_x10' (10#1) [C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/Lab_1/project_Lab1/project_Lab1.srcs/sources_1/new/celsius_to_fahren_x10.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'round' [C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/Lab_1/project_Lab1/project_Lab1.srcs/sources_1/new/round.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'round' (11#1) [C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/Lab_1/project_Lab1/project_Lab1.srcs/sources_1/new/round.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'temperature_display' [C:/Users/yanjx/Downloads/temperature_display.sv:22]
+	Parameter BLANK bound to: 7'b1000000 
+	Parameter DP bound to: 7'b0100000 
+	Parameter DASH bound to: 7'b0010000 
+	Parameter FAHR bound to: 7'b0001110 
+	Parameter CENT bound to: 7'b1000110 
+INFO: [Synth 8-6155] done synthesizing module 'temperature_display' (12#1) [C:/Users/yanjx/Downloads/temperature_display.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'lab02_top' (13#1) [C:/Users/yanjx/Downloads/lab02_top.sv:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1200.727 ; gain = 87.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1200.727 ; gain = 87.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1200.727 ; gain = 87.953
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1200.727 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/yanjx/Downloads/lab02_constraints.xdc]
+Finished Parsing XDC File [C:/Users/yanjx/Downloads/lab02_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/yanjx/Downloads/lab02_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab02_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lab02_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1318.758 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1318.758 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1318.758 ; gain = 205.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1318.758 ; gain = 205.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1318.758 ; gain = 205.984
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TWICtl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  stidle |                             0001 |                             0000
+                 ststart |                             1111 |                             0001
+                 stwrite |                             0000 |                             0011
+                  stsack |                             0010 |                             0110
+                  stread |                             0111 |                             0010
+            stmnackstart |                             0110 |                             1001
+                  stmack |                             0100 |                             0111
+             stmnackstop |                             0101 |                             1000
+                  ststop |                             0011 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'gray' in module 'TWICtl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1318.758 ; gain = 205.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   17 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 89    
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                7 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   4 Input   17 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 7     
+	   8 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 4     
+	   9 Input    4 Bit        Muxes := 1     
+	  27 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 88    
+	   8 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 33    
+	   4 Input    1 Bit        Muxes := 20    
+	   8 Input    1 Bit        Muxes := 7     
+	   3 Input    1 Bit        Muxes := 5     
+	   9 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1318.758 ; gain = 205.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1318.758 ; gain = 205.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1495.719 ; gain = 382.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    42|
+|3     |LUT1   |    47|
+|4     |LUT2   |    38|
+|5     |LUT3   |    37|
+|6     |LUT4   |    68|
+|7     |LUT5   |    67|
+|8     |LUT6   |   207|
+|9     |MUXF7  |    20|
+|10    |MUXF8  |     4|
+|11    |FDRE   |   204|
+|12    |FDSE   |    26|
+|13    |IBUF   |    18|
+|14    |IOBUF  |     2|
+|15    |OBUF   |    31|
+|16    |OBUFT  |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 1505.809 ; gain = 275.004
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.809 ; gain = 393.035
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1505.809 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 68 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1505.809 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+78 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 1505.809 ; gain = 393.035
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yanjx/Lab2 916/Lab2 916.runs/synth_1/lab02_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file lab02_top_utilization_synth.rpt -pb lab02_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 16 15:42:12 2025...
