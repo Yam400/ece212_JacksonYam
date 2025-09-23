@@ -72,6 +72,8 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -90,8 +92,7 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   C:/Users/yanjx/Downloads/adder_display.sv
   C:/Users/yanjx/Downloads/adv_seven_seg_n.sv
-  C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab3/lab3.srcs/sources_1/new/carry_lookahead_8b.sv
-  C:/Users/yanjx/Downloads/full_adder.sv
+  C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab3/lab3.srcs/sources_1/new/prefix_8b.sv
   C:/Users/yanjx/Downloads/lab03_top.sv
 }
 OPTRACE "Adding files" END { }

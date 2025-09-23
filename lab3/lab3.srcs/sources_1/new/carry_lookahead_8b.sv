@@ -28,8 +28,8 @@ logic [3:0] g;
 logic cla;
 logic [6:0] carry;
 
-assign p[3:0] = a[3:0] & b[3:0];
-assign g[3:0] = a[3:0] | b[3:0];
+assign p[3:0] = a[3:0] | b[3:0];
+assign g[3:0] = a[3:0] & b[3:0];
 
 assign cla = (cin & (((p[3]&p[2])&p[1])&p[0]) )|( ((((((g[0]&p[1])|g[1])&p[2])|g[2])&p[3])|g[3]) );
 
