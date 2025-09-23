@@ -91,7 +91,7 @@ module prefix_8b(
     assign g13 = G[7] | (P[7] & g9);
 
     //Final Yellow Nodes
-    assign Cout = 
+    assign Cout = g13;
     assign S[7] = A[7] ^ B[7] ^ g9;
     assign S[6] = A[6] ^ B[6] ^ g10;
     assign S[5] = A[5] ^ B[5] ^ g11;
