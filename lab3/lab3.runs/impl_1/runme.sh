@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/yanjx/lab3/lab3.runs/impl_1'
+HD_PWD='C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab3/lab3.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log ripple_carry_8b.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ripple_carry_8b.tcl -notrace
+EAStep vivado -log lab03_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lab03_top.tcl -notrace
 
 

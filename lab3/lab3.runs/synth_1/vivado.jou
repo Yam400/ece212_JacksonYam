@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Sep 23 13:28:42 2025
-# Process ID: 9656
-# Current directory: C:/Users/yanjx/lab3/lab3.runs/synth_1
-# Command line: vivado.exe -log ripple_carry_8b.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ripple_carry_8b.tcl
-# Log file: C:/Users/yanjx/lab3/lab3.runs/synth_1/ripple_carry_8b.vds
-# Journal file: C:/Users/yanjx/lab3/lab3.runs/synth_1\vivado.jou
+# Start of session at: Tue Sep 23 14:51:57 2025
+# Process ID: 16528
+# Current directory: C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab3/lab3.runs/synth_1
+# Command line: vivado.exe -log lab03_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab03_top.tcl
+# Log file: C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab3/lab3.runs/synth_1/lab03_top.vds
+# Journal file: C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab3/lab3.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source ripple_carry_8b.tcl -notrace
+source lab03_top.tcl -notrace

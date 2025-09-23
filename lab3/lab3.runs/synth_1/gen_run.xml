@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1758648518">
-  <File Type="PA-TCL" Name="ripple_carry_8b.tcl"/>
-  <File Type="REPORTS-TCL" Name="ripple_carry_8b_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ripple_carry_8b.vds"/>
-  <File Type="RDS-UTIL" Name="ripple_carry_8b_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ripple_carry_8b_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="ripple_carry_8b.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1758653513">
+  <File Type="PA-TCL" Name="lab03_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="lab03_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="lab03_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="lab03_top.vds"/>
+  <File Type="RDS-UTIL" Name="lab03_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="lab03_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="lab03_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="lab03_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="lab03_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../../Downloads/adder_display.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../Downloads/adv_seven_seg_n.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/carry_lookahead_8b.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../../../Downloads/full_adder.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../Downloads/lab03_top.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -17,6 +48,7 @@
     </File>
     <File Path="$PPRDIR/../../../../Downloads/ripple_carry_8b.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -38,23 +70,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../Downloads/adder_display.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../../../Downloads/lab03_top.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../../../Downloads/adv_seven_seg_n.sv">
+    <File Path="$PSRCDIR/sources_1/new/prefix_8b.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -64,8 +80,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="ripple_carry_8b"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="lab03_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -89,9 +104,9 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design">
-      <Option Id="MaxDsp">0</Option>
-      <Option Id="FlattenHierarchy">1</Option>
       <Option Id="CascadeDsp">1</Option>
+      <Option Id="FlattenHierarchy">1</Option>
+      <Option Id="MaxDsp">0</Option>
     </Step>
   </Strategy>
 </GenRun>
