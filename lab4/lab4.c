@@ -46,21 +46,27 @@ void part4() {
     while (1){
         int Leftval = analogRead(LEFT_SENSOR);
         int Rightval = analogRead(RIGHT_SENSOR);
-        if(Leftval < 0x136 && Rightval < 0x136){
+        if(Leftval < 0x180 && Rightval < 0x180){
             RFORWARD = 0x7FFF;
             LFORWARD = 0x7FFF;
             RBACK = 0x0000;
             LBACK = 0x0000;
-        } else if(Leftval > 0x136 && Rightval < 0x136){
-            RFORWARD = 0x3FFF;
+            writeLEDs(0x1);
+            delayms(20);
+        } else if(Leftval > 0x180 && Rightval < 0x180){
+            RFORWARD = 0x7FFF;
+            LFORWARD = 0x0000;
+            RBACK = 0x0000;
+            LBACK = 0x0000;
+            writeLEDs(0x2);
+            delayms(20);
+        } else if (Leftval < 0x180 && Rightval > 0x180){
+            RFORWARD = 0x0000;
             LFORWARD = 0x7FFF;
             RBACK = 0x0000;
             LBACK = 0x0000;
-        } else if (Leftval < 0x136 && Rightval > 0x136){
-            RFORWARD = 0x7FFF;
-            LFORWARD = 0x3FFF;
-            RBACK = 0x0000;
-            LBACK = 0x0000;
+            writeLEDs(0x4);
+            delayms(20);
         }
     }
 }
