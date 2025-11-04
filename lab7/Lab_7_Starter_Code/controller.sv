@@ -24,7 +24,31 @@ module controller(
     output logic [2:0] alucontrol
     );
 
+    import mips_decls_p::*;
 
+    logic [1:0] aluop;
+    logic branch;
+
+    maindec u_MD(
+        .opcode (opcode),
+        .memtoreg (memtoreg),
+        .memwrite (memwrite),
+        .alusrc (alusrc),
+        .regdst (regdst),
+        .regwrite (regwrite),
+        .branch (branch),
+        .jump (jump),
+        .aluop (aluop),
+
+    );
+
+    aludec U_AD (
+        .funct (funct),
+        .aluop (aluop),
+        .alucontrol (alucontrol)
+    );
+
+    assign pcsrc = branch & zero;
 
 
 
