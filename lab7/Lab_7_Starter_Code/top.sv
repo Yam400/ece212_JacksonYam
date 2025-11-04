@@ -110,7 +110,7 @@ module top(
         .w_en (memwrite),
         .adr (dataadr),
         .rd (readdata)
-    )
+    );
 
     assign result = (memtoreg) ? readdata : aluout;
 
