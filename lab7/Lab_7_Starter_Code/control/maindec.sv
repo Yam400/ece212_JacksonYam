@@ -20,9 +20,52 @@ module maindec (
 
 	import mips_decls_p::*;
 
-
-
-
-
+always_comb begin
+    if(opcode == OP_RTYPE) begin
+        regdst = 1'b1;
+        memtoreg = 1'b0;
+        regwrite = 1'b1;
+        alusrc = 1'b0;
+        aluop = 2'b10;
+        memwrite = 1'b0;
+        branch = 1'b0; 
+    end
+    else if (opcode == OP_LW) begin
+        regdst = 1'b0;
+        memtoreg = 1'b1;
+        regwrite = 1'b1;
+        alusrc = 1'b1;
+        aluop = 2'b00;
+        memwrite = 1'b0;
+        branch = 1'b0; 
+    end
+    else if (opcode == OP_SW) begin
+        regdst = 1'b0;
+        memtoreg = 1'b0;
+        regwrite = 1'b0;
+        alusrc = 1'b1;
+        aluop = 2'b00;
+        memwrite = 1'b1;
+        branch = 1'b0; 
+    end
+    else if (opcode == OP_BEQ) begin 
+        regdst = 1'b1;
+        memtoreg = 1'b0;
+        regwrite = 1'b0;
+        alusrc = 1'b0;
+        aluop = 2'b01;
+        memwrite = 1'b0;
+        branch = 1'b1; 
+    end
+    else begin
+        regdst = 1'b0;
+        memtoreg = 1'b0;
+        regwrite = 1'b1;
+        alusrc = 1'b1;
+        aluop = 2'b00;
+        memwrite = 1'b0;
+        branch = 1'b0; 
+    end 
+end
 
 endmodule // maindec
