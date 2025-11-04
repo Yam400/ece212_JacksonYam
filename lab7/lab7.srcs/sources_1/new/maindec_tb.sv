@@ -20,34 +20,56 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module maindec_tb();
+module controller_tb();
 
 mips_decls_p::opcode_t op;
+mips_decls_p::funct_t f;
+logic zero;
 logic memtoreg;
 logic memwrite;
-logic branch;
+
+logic pcsrc;
+
 logic alusrc;
 logic regdst;
 logic regwrite;
 logic jump;
-logic [1:0] aluop;
+logic [2:0] alucontrol;
 
 import mips_decls_p::*;
 
-maindec test(.opcode(op), .memtoreg(memtoreg), .memwrite(memwrite), .branch(branch), .alusrc(alusrc), .regdst(regdst), .regwrite(regwrite), .jump(jump), .aluop(aluop));
+controller test(.opcode(op), .funct(f), .zero(zero), .memtoreg(memtoreg), .memwrite(memwrite), .pcsrc(pcsrc), .alusrc(alusrc), .regdst(regdst), .regwrite(regwrite), .jump(jump), .alucontrol(alucontrol));
 
 
 initial begin
-   op = OP_RTYPE;
+    zero = 1'b0;
+    op = OP_RTYPE;
    #10;
    op = OP_LW;
    #10;
    op = OP_SW;
    #10;
    op = OP_BEQ;
+   zero = 1'b1;
    #10;
    op = OP_ADDI;
    #10;
+   op = OP_LW;
+   f = F_ADD;
+   #10;
+   op = OP_BEQ;
+   f = F_SUB;
+   #10;
+   op = OP_RTYPE;
+   f = F_AND;
+   #10;
+   f = F_OR;
+   #10;
+   f = F_SLT;
+   #10;
+   
+   #10;
+   
 
 end
 

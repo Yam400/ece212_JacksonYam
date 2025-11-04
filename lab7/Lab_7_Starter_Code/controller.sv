@@ -29,16 +29,16 @@ module controller(
     logic [1:0] aluop;
     logic branch;
 
-    maindec u_MD(
-        .opcode (opcode),
-        .memtoreg (memtoreg),
-        .memwrite (memwrite),
-        .alusrc (alusrc),
-        .regdst (regdst),
-        .regwrite (regwrite),
-        .branch (branch),
-        .jump (jump),
-        .aluop (aluop),
+    maindec U_MD(
+        .opcode(opcode),
+        .memtoreg(memtoreg),
+        .memwrite(memwrite),
+        .alusrc(alusrc),
+        .regdst(regdst),
+        .regwrite(regwrite),
+        .branch(branch),
+        .jump(jump),
+        .aluop(aluop)
 
     );
 
