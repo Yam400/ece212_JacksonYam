@@ -1,0 +1,12 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/control/maindec.sv,1762284331,systemVerilog,,C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/lab7.srcs/sources_1/new/maindec_tb.sv,,maindec,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/memory/dmem.sv,1762269354,systemVerilog,,C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/memory/imem.sv,,dmem,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/memory/imem.sv,1762269154,systemVerilog,,C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/top.sv,,imem,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/mips_decls_p.sv,1730171228,systemVerilog,C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/control/maindec.sv;C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/lab7.srcs/sources_1/new/maindec_tb.sv,C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/control/maindec.sv,,mips_decls_p,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/testbench.sv,1730171228,systemVerilog,,,,testbench,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/top.sv,1762270098,systemVerilog,,C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/Lab_7_Starter_Code/testbench.sv,,top,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/lab7.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab7/lab7.srcs/sources_1/new/maindec_tb.sv,1762285579,systemVerilog,,,,maindec_tb,,uvm,,,,,,
