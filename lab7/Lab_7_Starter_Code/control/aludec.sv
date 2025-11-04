@@ -15,7 +15,34 @@ module aludec(
     output logic [2:0] alucontrol
     );
 
+    
     import mips_decls_p::*;
+
+    always_comb begin
+        alucontrol = 3'b010;
+
+        unique case (aluop)
+            2'b00: begin
+                alucontrol = 3'b010;
+            end
+            2'b01: begin
+                alucontrol = 3'b110;
+            end
+            2'b10: begin
+                unique case (funct)
+                    F_ADD: alucontrol = 3'b010;
+                    F_SUB: alucontrol = 3'b110;
+                    F_AND: alucontrol = 3'b000;
+                    F_OR: alucontrol = 3'b001;
+                    F_SLT: alucontrol = 3'b111;
+                    default alucontrol = 3'b010;
+                endcase
+            end 
+            default: begin 
+                alucontrol = 3'b010;
+            end
+        endcase
+    end
 
    
 endmodule
