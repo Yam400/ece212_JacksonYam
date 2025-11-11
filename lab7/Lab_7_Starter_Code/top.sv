@@ -18,6 +18,8 @@ module top(
 
 
     //Wires & Registers
+    logic jump; //for the first test case just make jump always 0
+    assign jump = 1'b0;
     logic [31:0] pc, pcnext, pcplus4, pcbranch, jumpaddr;
 
     //Instruction / decoded fields
@@ -40,8 +42,10 @@ module top(
     assign jumpaddr = {pcplus4[31:28],instr[25:0],2'b00};
 
     //Decode fields and controller
-    opcode_t opcode = opcode_t'(instr[31:26]);
-    funct_t funct = funct_t'(instr[5:0]);
+    opcode_t opcode;
+    assign opcode = opcode_t'(instr[31:26]);
+    funct_t funct;
+    assign funct = funct_t'(instr[5:0]);
 
     logic memtoreg, alusrc, regdst, regwrite, branch_unused, jup;
     logic [2:0] alucontrol;
@@ -64,17 +68,19 @@ module top(
     //Register File + ALU data path
 
     logic [4:0] writereg;
-    logic [31:0] rd1, rd2, scrb, aluout, readdata;
-    logic [31:0] signimm, signimm_sl2, result;
+    logic [31:0] rd1, rd2, wd3, scrb, aluout, readdata;
+    logic [31:0] signimm, signimm_s12, result, writedest;
 
     assign writereg = (regdst) ? instr[15:11] : instr[20:16];
-
+    assign writedest = (memtoreg) ? readdata : aluout;
+    
     regfile RF (
         .clk (clk),
         .w_en (regwrite),
         .adr1 (instr[25:21]),
         .adr2 (instr[20:16]),
         .wadr3 (writereg),
+        .wd3(writedest),
         .rd1 (rd1),
         .rd2 (rd2)
     );
@@ -93,11 +99,11 @@ module top(
     );
 
     //Branch / Jump and next PC
-
     assign pcbranch = pcplus4 + signimm_s12;
-
-    logic [31:0] pc_after_branch = (pcsrc) ? pcbranch : pcplus4;
-
+    
+    logic [31:0] pc_after_branch;
+    assign pc_after_branch = (pcsrc) ? pcbranch : pcplus4;
+    
     assign pcnext = (jump) ? jumpaddr : pc_after_branch;
 
     //Data Memory + writeback
@@ -109,6 +115,7 @@ module top(
         .clk (clk),
         .w_en (memwrite),
         .adr (dataadr),
+        .wd(rd2),
         .rd (readdata)
     );
 

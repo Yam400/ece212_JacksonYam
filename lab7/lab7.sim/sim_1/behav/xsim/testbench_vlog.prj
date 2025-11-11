@@ -1,8 +1,13 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
+"../../../../Lab_7_Starter_Code/datapath/alu.sv" \
 "../../../../Lab_7_Starter_Code/mips_decls_p.sv" \
+"../../../../Lab_7_Starter_Code/control/aludec.sv" \
+"../../../../Lab_7_Starter_Code/controller.sv" \
 "../../../../Lab_7_Starter_Code/memory/dmem.sv" \
 "../../../../Lab_7_Starter_Code/memory/imem.sv" \
+"../../../../Lab_7_Starter_Code/control/maindec.sv" \
+"../../../../Lab_7_Starter_Code/datapath/regfile.sv" \
 "../../../../Lab_7_Starter_Code/top.sv" \
 "../../../../Lab_7_Starter_Code/testbench.sv" \
 
