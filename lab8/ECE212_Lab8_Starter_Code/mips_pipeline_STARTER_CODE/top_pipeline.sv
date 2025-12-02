@@ -25,7 +25,11 @@ module top_pipeline(
                  aluresult_e, aluresult_m, aluresult_w, memresult_m, memresult_w,
                  result_w;
   logic [4:0]    destreg_e, destreg_m, destreg_w;
-   
+  
+  //jason yan wrote these control signals for doing hazard detection
+  logic          datahzd_dec_ex, datahzd_dec_mem, ctrlhzd_j, ctrlhzd_beq;
+  
+  
   // Instantiate necessary control signals
   logic         pcsrc_e, jump_d, iszero_e;
                 
@@ -34,19 +38,45 @@ module top_pipeline(
   //--------------------------------------------------------------
   //   FETCH Stage
   //--------------------------------------------------------------
+  logic enF_D;
+  logic resetD_E;
+  always_comb begin
+  if(datahzd_dec_ex == 1'b1 || datahzd_dec_mem == 1'b1) begin
+    enF_D = 1'b0;
+    resetD_E = 1'b1;
+  end
+  else begin
+    enF_D = 1'b1;
+    resetD_E = 1'b0;
+  end
+  
+  end
+  
   fetch_stage   FETCH(.clk(clk), .reset(reset),
                             .pcen_c(1'b1), .pcsrc_c(pcsrc_e), .jump_c(jump_d),       // External control signals used by stage 
                             .pcbranchaddr_i(branchaddr_e), .pcjumpaddr_i(jumpaddr),    // Inputs to stage  
                             .instr_o(instr_f), .pcplus4_o(pcplus4_f));               // Outputs of stage                 
                     
-  pr_f_d        FD_PIPEREG(.clk(clk), .reset(reset), 
+  pr_f_d        FD_PIPEREG(.clk(clk), .reset(resetD_E || reset), 
                             .instr_i(instr_f), .pcplus4_i(pcplus4_f),                // Pipeline register
-                            .instr_o(instr_d), .pcplus4_o(pcplus4_d));
+                            .instr_o(instr_d), .pcplus4_o(pcplus4_d), .en(enF_D));
   
   
   //--------------------------------------------------------------
   //   DECODE Stage
-  //--------------------------------------------------------------            
+  //--------------------------------------------------------------    
+  logic enD_E;
+  logic resetE_M;
+  always_comb begin
+  if(datahzd_dec_ex == 1'b1 || datahzd_dec_mem == 1'b1) begin
+    enD_E = 1'b0;
+    resetE_M = 1'b1;
+  end
+  else begin
+    enD_M = 1'b1;
+    resetE_M = 1'b0;
+  end
+          
   decode_stage  DECODE(.clk(clk), .reset(reset), .instr_i(instr_d), 
                             .regwrite_c(regwrite_w),                                                // External control signals used by stage 
                             .pcplus4_i(pcplus4_d), .wadr3_i(destreg_w), .wd3_i(result_w),           // Inputs to stage              
@@ -54,10 +84,10 @@ module top_pipeline(
                             .rd1_o(rd1_d), .rd2_o(rd2_d), .signextimm_o(extimm_d),
                             .jump_o(jump_d)); 
                                            
-  pr_d_e        DE_PIPEREG(.clk(clk), .reset(reset), 
+  pr_d_e        DE_PIPEREG(.clk(clk), .reset(resetE_M || reset), 
                             .instr_i(instr_d), .rd1_i(rd1_d), .rd2_i(rd2_d), .signimm_i(extimm_d),   // Pipeline register
                             .branchaddr_i(branchaddr_d), .branchaddr_o(branchaddr_e),
-                            .instr_o(instr_e), .rd1_o(rd1_e), .rd2_o(rd2_e), .signimm_o(extimm_e));
+                            .instr_o(instr_e), .rd1_o(rd1_e), .rd2_o(rd2_e), .signimm_o(extimm_e), .en(enD_M));
                             
                             
   //--------------------------------------------------------------
@@ -93,7 +123,35 @@ module top_pipeline(
                             .aluresult_i(aluresult_w), .memresult_i(memresult_w),   // Inputs to stage
                             .result_o(result_w), .regwrite_o(regwrite_w));          // Outputs to stage
     
-
+  //detection
+  always_comb begin
+  ctrlhzd_j = 1'b0;
+  ctrlhzd_beq = 1'b0;
+  datahzd_dec_ex = 1'b0;
+  datahzd_dec_mem = 1'b0;
+  
+  //J type hazard detection
+  if(instr_d[31:26] == 6'b000010 || instr_d[31:26] == 6'b000011 || (instr_d[31:26] == 6'b000000 && instr_d[5:0] == 6'b001000)) begin
+       ctrlhzd_j = 1'b1;
+  end
+  //handling for branch instructions when taken only
+  if ((instr_d[31:26] == 6'b000100 && iszero_e == 1'b1) || (instr_d[31:26] == 6'b000101 && iszero_e == 1'b1)) begin
+       ctrlhzd_beq = 1'b1;
+  end
+  //handling for execute detection
+  if ((destreg_e == instr_d[25:21] || (destreg_e == instr_d[20:16] && instr_d[31:26] == 6'b000000) || 
+            (instr_d[31:26] == 6'b000100 && destreg_e == instr_d[20:16]) || (instr_d[31:26] == 6'b000101 && destreg_e == instr_d[20:16])) && !(instr_e == 32'h00000000)) begin
+       datahzd_dec_ex = 1'b1;
+  end
+  //handling for memory detection
+  if ((destreg_m == instr_d[25:21] || (destreg_m == instr_d[20:16] && instr_d[31:26] == 6'b000000) || 
+            (instr_d[31:26] == 6'b000100 && destreg_e == instr_d[20:16]) || (instr_d[31:26] == 6'b000101 && destreg_e == instr_d[20:16])) && !(instr_m == 32'h00000000)) begin
+       datahzd_dec_mem = 1'b1;
+  end
+  
+  
+  
+  end
 
 
 endmodule

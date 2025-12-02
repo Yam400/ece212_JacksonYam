@@ -1,4 +1,4 @@
-module pr_d_e(input logic clk, reset,
+module pr_d_e(input logic clk, reset, en,
   input logic [31:0] instr_i,
   input logic [31:0] rd1_i, rd2_i,
   input logic [31:0] signimm_i, branchaddr_i,
@@ -15,11 +15,18 @@ module pr_d_e(input logic clk, reset,
     signimm_o <= '0;
     branchaddr_o <= 32'd0;
   end
-  else begin
+  else if(en) begin
     instr_o <= instr_i;
     rd1_o <= rd1_i;
     rd2_o <= rd2_i;
     signimm_o <= signimm_i;
     branchaddr_o <= branchaddr_i;
+  end
+  else if (!en) begin
+    instr_o <= instr_o;
+    rd1_o <= rd1_o;
+    rd2_o <= rd2_o;
+    signimm_o <= signimm_o;
+    branchaddr_o <= branchaddr_o;
   end
 endmodule: pr_d_e

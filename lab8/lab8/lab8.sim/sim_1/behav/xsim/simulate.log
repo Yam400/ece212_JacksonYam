@@ -1,4 +1,4 @@
 Vivado Simulator 2020.2
 Time resolution is 1 ps
-Simulation succeeded
-$stop called at time : 430 ns : File "C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab8/ECE212_Lab8_Starter_Code/mips_pipeline_STARTER_CODE/testbench.sv" Line 44
+Simulation failed - expected to write m[84]=7, actual value          x
+$stop called at time : 220 ns : File "C:/Users/yanjx/Documents/GitHub/ece212_JacksonYam/lab8/ECE212_Lab8_Starter_Code/mips_pipeline_STARTER_CODE/testbench.sv" Line 48
